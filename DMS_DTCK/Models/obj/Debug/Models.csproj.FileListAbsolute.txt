@@ -1,0 +1,10 @@
+D:\CNNet\DMS_DTCK\Models\bin\Debug\Models.dll.config
+D:\CNNet\DMS_DTCK\Models\bin\Debug\Models.dll
+D:\CNNet\DMS_DTCK\Models\bin\Debug\Models.pdb
+D:\CNNet\DMS_DTCK\Models\bin\Debug\EntityFramework.dll
+D:\CNNet\DMS_DTCK\Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\CNNet\DMS_DTCK\Models\bin\Debug\EntityFramework.xml
+D:\CNNet\DMS_DTCK\Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\CNNet\DMS_DTCK\Models\obj\Debug\Models.dll
+D:\CNNet\DMS_DTCK\Models\obj\Debug\Models.pdb
+D:\CNNet\DMS_DTCK\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache

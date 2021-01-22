@@ -1,0 +1,66 @@
+﻿@model Models.Framework.HOPDONG
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="text-align: center">THÔNG TIN HỢP ĐỒNG</h4>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 500px">
+        <dt>
+            @Html.DisplayNameFor(model => model.PHONG.MAKHU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHONG.MAKHU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SINHVIEN.MATKHAU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SINHVIEN.MATKHAU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAYLAP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAYLAP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAYBATDAU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAYBATDAU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAYKETTHUC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAYKETTHUC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HIEULUCHD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HIEULUCHD)
+        </dd>
+
+    </dl>
+</div>
+<p style="text-align: center">
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MAHOPDONG }) |
+    @Html.ActionLink("Trở lại trang Danh sách hợp đồng", "Index")
+</p>

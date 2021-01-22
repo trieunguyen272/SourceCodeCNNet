@@ -1,0 +1,122 @@
+﻿@model Models.Framework.SINHVIEN
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="text-align: center">THÔNG TIN SINH VIÊN</h4>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 500px">
+        <dt>
+            @Html.DisplayNameFor(model => model.MATKHAU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MATKHAU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HOTENLOT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOTENLOT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HOVATEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOVATEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAYSINH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAYSINH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIOITINH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIOITINH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIACHI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIACHI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CMND)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CMND)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KHOA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KHOA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SVNOITRU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SVNOITRU)
+        </dd>
+
+    </dl>
+</div>
+<p style="text-align: center">
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MASV }) |
+    @Html.ActionLink("Trở lại trang Danh sách sinh viên", "Index")
+</p>

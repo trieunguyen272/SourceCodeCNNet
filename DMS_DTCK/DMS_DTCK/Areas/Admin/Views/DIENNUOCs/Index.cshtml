@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Models.Framework.DIENNUOC>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="text-align: center">DANH SÁCH ĐIỆN NƯỚC</h4>
+
+<p style="text-align: center">
+    @Html.ActionLink("Thêm điện nước mới", "Create")
+</p>
+<div>
+    <div class="row">
+        <div class="col-lg-12" style="text-align: right">
+            <input style="border-radius: 7px; width: 270px; height: 40px" type="text" placeholder="Tìm kiếm" id="txtSearch" />
+            <button type="submit" style="border-radius: 7px; width: 50px; height: 40px; margin-left: -50px" id="btnSearch">
+                <i class="glyphicon glyphicon-search"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<table class="table" style="margin-top: 20px">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PHONG.MAPHONG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.THANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NAM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHISODIEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHISONUOC)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PHONG.MAPHONG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.THANG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CHISODIEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CHISONUOC)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.MADIENNUOC }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.MADIENNUOC }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.MADIENNUOC })
+            </td>
+        </tr>
+    }
+
+</table>
+<script>
+    $('#btnSearch').on('click', function() {
+        var giatrinhap = $('#txtSearch').val();
+        window.location.href = "/Admin/DIENNUOCs/SearchByName?name=" + giatrinhap;
+    });
+</script>

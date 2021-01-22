@@ -1,0 +1,67 @@
+﻿<script src="~/bootstrap/js/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Assets/styleLog_In.css" rel="stylesheet" />
+    <link href="~/fontawesome/css/all.css" rel="stylesheet" />
+    <link href="~/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+</head>
+<!--Coded with love by Mutiullah Samim-->
+<body>
+    <div class="container h-100" style="background-image: url('../../Assets/login.png');">
+        <div class="d-flex justify-content-center h-100">
+            <div class="user_card">
+                <div class="d-flex justify-content-center">
+                    <div class="brand_logo_container">
+                        <img src="~/Assets/QNU_logo.png" class="brand_logo" alt="Logo">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center form_container">
+                    <form>
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            @*@Html.TextBoxFor(model => model.UserName, new { @class = "form-control input_user", @placeholder = "Username", @autofocus = "autofocus" })*@
+                            <input type="text" name="" class="form-control input_user" value="" placeholder="Username">
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-key"></i></span>
+                            </div>
+                            @*@Html.TextBoxFor(model => model.PassWord, new { @class = "form-control input_pass", @placeholder = "Password", @type = "password" })*@
+                            <input type="password" name="" class="form-control input_pass" value="" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                @*<label>
+                        @Html.CheckBoxFor(model => model.RememberMe, new { @class = "custom-control-label" })
+                        Lưu mật khẩu
+                    </label>*@
+                                <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                <label class="custom-control-label" for="customControlInline">Lưu mật khẩu</label>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center mt-3 login_container">
+
+                            <button type="button" name="button" class="btn login_btn">Đăng nhập</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="mt-4">
+                    <div class="d-flex justify-content-center links">
+                        <a href="#">Quên mật khẩu?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

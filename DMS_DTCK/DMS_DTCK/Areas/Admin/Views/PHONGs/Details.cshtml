@@ -1,0 +1,74 @@
+﻿@model Models.Framework.PHONG
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="text-align: center">CHI TIẾT PHÒNG</h4>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 500px">
+        <dt>
+            @Html.DisplayNameFor(model => model.KHUNHA.TENKHU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KHUNHA.TENKHU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SOPHONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOPHONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SOLUONGSV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOLUONGSV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIAPHONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIAPHONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SOCHOTRONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOCHOTRONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOTAKHAC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOTAKHAC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRANGTHAI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRANGTHAI)
+        </dd>
+
+    </dl>
+</div>
+<p style="text-align: center">
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MAPHONG }) |
+    @Html.ActionLink("Trở lại trang Danh sách phòng", "Index")
+</p>

@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Models.Framework.SINHVIEN>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="text-align: center">DANH SÁCH SINH VIÊN NỘI TRÚ</h4>
+
+<div>
+    <div class="row">
+        <div class="col-lg-12" style="text-align: right">
+            <input style="border-radius: 7px; width: 270px; height: 40px" type="text" placeholder="Tìm kiếm" id="txtSearch" />
+            <button type="submit" style="border-radius: 7px; width: 50px; height: 40px; margin-left: -50px" id="btnSearch">
+                <i class="glyphicon glyphicon-search"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<table class="table" style="margin-top: 20px">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MASV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HOVATEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYSINH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GIOITINH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIACHI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CMND)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SDT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOP)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.SVNOITRU)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MASV)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.HOVATEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAYSINH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GIOITINH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIACHI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CMND)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SDT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LOP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SVNOITRU)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.MASV }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.MASV })
+            </td>
+        </tr>
+    }
+
+</table>
+<script>
+    $('#btnSearch').on('click', function() {
+        var giatrinhap = $('#txtSearch').val();
+        window.location.href = "/Admin/SINHVIENs/SearchByName?name=" + giatrinhap;
+    });
+</script>
+

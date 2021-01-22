@@ -1,0 +1,82 @@
+﻿@model Models.Framework.THANNHAN
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="text-align: center">THÔNG TIN THÂN NHÂN SINH VIÊN</h4>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 500px">
+        <dt>
+            @Html.DisplayNameFor(model => model.SINHVIEN.MASV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SINHVIEN.MASV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HOTENCHA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOTENCHA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGHENGHIEPCHA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGHENGHIEPCHA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDTCHA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDTCHA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HOTENME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOTENME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGHENGHIEPME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGHENGHIEPME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDTME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDTME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.THANNHANSVNT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.THANNHANSVNT)
+        </dd>
+
+    </dl>
+</div>
+<p style="text-align: center">
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MATHANNHAN }) |
+    @Html.ActionLink("Trở lại trang Danh sách thân nhân", "Index")
+</p>

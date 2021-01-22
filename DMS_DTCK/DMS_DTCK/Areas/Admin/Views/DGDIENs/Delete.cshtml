@@ -1,0 +1,31 @@
+﻿@model Models.Framework.DGDIEN
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="text-align: center">XÓA ĐƠN GIÁ ĐIỆN</h4>
+
+<h4 style="text-align: center">Bạn có muốn xóa đơn giá điện?</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 500px">
+        <dt>
+            @Html.DisplayNameFor(model => model.DONGIADIEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DONGIADIEN)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color" style="text-align: center">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Trở lại trang Danh sách đơn giá điện", "Index")
+        </div>
+    }
+</div>

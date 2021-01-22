@@ -1,0 +1,42 @@
+﻿@model Models.Framework.KHUNHA
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>KHUNHA</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TENKHU)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TENKHU)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MOTAKHAC)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MOTAKHAC)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MAKHU }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

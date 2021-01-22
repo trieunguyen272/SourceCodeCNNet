@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Models.Framework.HOPDONG>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="text-align: center">DANH SÁCH HỢP ĐỒNG</h4>
+<div>
+    <div class="row">
+        <div class="col-lg-12" style="text-align: right">
+            <input style="border-radius: 7px; width: 270px; height: 40px" type="text" placeholder="Tìm kiếm" id="txtSearch" />
+            <button type="submit" style="border-radius: 7px; width: 50px; height: 40px; margin-left: -50px" id="btnSearch">
+                <i class="glyphicon glyphicon-search"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<table class="table" style="margin-top: 20px">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SINHVIEN.MASV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PHONG.MAPHONG)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYLAP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYBATDAU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYKETTHUC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HIEULUCHD)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SINHVIEN.MASV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PHONG.MAPHONG)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAYLAP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAYBATDAU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAYKETTHUC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HIEULUCHD)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.MAHOPDONG }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.MAHOPDONG })
+            </td>
+        </tr>
+    }
+
+</table>
+<script>
+    $('#btnSearch').on('click', function() {
+        var giatrinhap = $('#txtSearch').val();
+        window.location.href = "/Admin/HOPDONGs/SearchByName?name=" + giatrinhap;
+    });
+</script>

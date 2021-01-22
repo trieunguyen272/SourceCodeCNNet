@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Models.Framework.DGNUOC>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="text-align: center">DANH SÁCH ĐƠN GIÁ NƯỚC</h4>
+
+<p style="text-align: center">
+    @Html.ActionLink("Thêm mới đơn giá nước", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MADGNUOC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DONGIANUOC)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MADGNUOC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DONGIANUOC)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MADGNUOC }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MADGNUOC }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MADGNUOC })
+        </td>
+    </tr>
+}
+
+</table>

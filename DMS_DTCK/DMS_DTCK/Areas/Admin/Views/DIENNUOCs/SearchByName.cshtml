@@ -1,0 +1,55 @@
+﻿@model List<Models.Framework.DIENNUOC>
+@{
+    ViewBag.Title = "SearchByName";
+    ViewBag.Heading = "DANG SÁCH ĐIỆN NƯỚC TÌM ĐƯỢC";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<table class="table" style="margin-top: 20px">
+    <tr>
+        <th>
+            Mã phòng
+        </th>
+        <th>
+            Tháng
+        </th>
+        <th>
+            Năm
+        </th>
+        <th>
+            Chỉ số điện
+        </th>
+        <th>
+            Chỉ số nước
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PHONG.MAPHONG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.THANG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CHISODIEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CHISONUOC)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.MADIENNUOC }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.MADIENNUOC }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.MADIENNUOC })
+            </td>
+        </tr>
+    }
+
+</table>
+

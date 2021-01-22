@@ -1,0 +1,70 @@
+﻿@model List<Models.Framework.PHONG>
+@{
+    ViewBag.Title = "SearchByName";
+    ViewBag.Heading = "DANG SÁCH PHÒNG TÌM ĐƯỢC";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<table class="table" style="margin-top: 20px">
+    <tr>
+        <th>
+            Mã phòng
+        </th>
+        <th>
+            Tên khu
+        </th>
+        <th>
+            Số phòng
+        </th>
+        <th>
+            Số lượng sinh viên
+        </th>
+        <th>
+            Giá phòng
+        </th>
+        <th>
+            Số chỗ trống
+        </th>
+        <th>
+            Mô tả khác
+        </th>
+        <th>
+            Trạng thái
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MAPHONG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KHUNHA.TENKHU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SOPHONG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SOLUONGSV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GIAPHONG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SOCHOTRONG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MOTAKHAC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TRANGTHAI)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.MAPHONG }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.MAPHONG })
+            </td>
+        </tr>
+    }
+    </table>

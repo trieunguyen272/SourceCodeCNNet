@@ -1,0 +1,90 @@
+﻿@model Models.Framework.PHONG
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+<h4 style="text-align: center">THÔNG TIN PHÒNG BẠN ĐÃ CHỌN</h4>
+<div>    
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 500px">
+        <dt>
+            @Html.DisplayNameFor(model => model.KHUNHA.TENKHU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KHUNHA.TENKHU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SOPHONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOPHONG)
+        </dd>
+        <dt>
+                @Html.DisplayNameFor(model => model.SOLUONGSV)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SOLUONGSV)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GIAPHONG)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GIAPHONG)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SOCHOTRONG)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SOCHOTRONG)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MOTAKHAC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MOTAKHAC)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TRANGTHAI)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TRANGTHAI)
+            </dd>
+
+        </dl>
+        @*<div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Xác nhận" class="btn btn-default" />
+                </div>
+            </div>*@
+</div>
+
+
+
+
+@{
+
+    var session = (DMS_DTCK.Common.UserLogin)Session[DMS_DTCK.Common.CommonConstants.USER_SESSION];
+}
+    @*<p>
+        
+        @Html.ActionLink("", "Edit", "SINHVIENs", new { Area="Student" ,id = @session.UserName }, null)
+        
+    </p>*@
+<div style="text-align: center; margin-bottom: 10px">
+    <a class="btn btn-default" href="@Url.Action("Edit", new { controller="SINHVIENs", Area = "Student", id = @session.UserName })">
+        Xác nhận
+    </a>
+</div>

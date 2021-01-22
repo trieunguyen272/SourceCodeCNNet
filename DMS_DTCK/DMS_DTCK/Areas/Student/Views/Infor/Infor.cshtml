@@ -1,0 +1,112 @@
+﻿@model Models.Framework.SINHVIEN
+@{
+    ViewBag.Title = "Infor";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+<h4 style="text-align: center">THÔNG TIN TÀI KHOẢN</h4>
+@{
+
+    var session = (DMS_DTCK.Common.UserLogin)Session[DMS_DTCK.Common.CommonConstants.USER_SESSION];
+}
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 450px">
+        <dt>
+            @Html.DisplayNameFor(model => model.MASV)
+        </dt>
+
+        <dd>
+            @session.UserName
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HOTENLOT)
+        </dt>
+
+        <dd>
+            @session.FirstName
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TEN)
+        </dt>
+
+        <dd>
+            @session.LastName
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HOVATEN)
+        </dt>
+
+        <dd>
+            @session.User
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAYSINH)
+        </dt>
+
+        <dd>
+            @session.Birthday
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIOITINH)
+        </dt>
+
+        <dd>
+            @session.Gender
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIACHI)
+        </dt>
+
+        <dd>
+            @session.Address
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CMND)
+        </dt>
+
+        <dd>
+            @session.Identity_card
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDT)
+        </dt>
+
+        <dd>
+            @session.Phone_number
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOP)
+        </dt>
+
+        <dd>
+            @session.Class
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KHOA)
+        </dt>
+
+        <dd>
+            @session.Faculty
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANH)
+        </dd>
+
+    </dl>
+</div>

@@ -1,0 +1,78 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    width: 100% !important;
+    background-color:whitesmoke !important;
+}
+.img-rounded
+{
+    width: 80px;
+    height: 80px;
+    
+}
+.img-rounded
+{
+    border-radius: 50px;
+}
+.logoheader
+{
+    text-align: right;
+}
+h1
+{
+    color: white !important;
+    text-align: left;
+    font-size: .15rem;
+    vertical-align: baseline;
+}
+.menu
+{
+    width: 100%;
+    padding: 1rem 0rem;
+    border-radius: .5rem;
+}
+
+.left
+{
+    text-align: left;
+}
+.right
+{
+    text-align: right;
+}
+#footer-adm ul li
+{
+    list-style-type: none;
+}
+.img
+{
+    width: 500px;
+    height: 70vh;
+}
+.item_menu
+{
+    color: #1a75ff;
+    background-color: none;
+}
+/*===================== MAIN ==================*/
+
+/*=======================MENU---------------*/
+
+/*===================== FOOTER ===============*/
+footer {
+    padding: 50px;
+    background-color: #63ace5;
+    color: #fff;
+}
+footer ul{
+    line-height: 40px;
+    list-style: none;
+}
+
+footer .right{
+    line-height: 40px;
+}

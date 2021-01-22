@@ -1,0 +1,123 @@
+﻿@model IEnumerable<Models.Framework.HDDIENNUOC>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="text-align: center">DANH SÁCH HÓA ĐƠN ĐIỆN NƯỚC</h4>
+
+<p style="text-align: center">
+    @Html.ActionLink("Thêm mới hóa đơn điện nước", "Create")
+</p>
+
+<div>
+    <div class="row">
+        <div class="col-lg-12" style="text-align: right">
+            <input style="border-radius: 7px; width: 270px; height: 40px" type="text" placeholder="Tìm kiếm" id="txtSearch" />
+            <button type="submit" style="border-radius: 7px; width: 50px; height: 40px; margin-left: -50px" id="btnSearch">
+                <i class="glyphicon glyphicon-search"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<table class="table" style="margin-top: 20px">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PHONG.MAPHONG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.THANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NAM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHISODIENCU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHISODIENMOI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DGDIEN.DONGIADIEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIENDIEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHISONUOCCU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHISONUOCMOI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DGNUOC.DONGIANUOC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIENNUOC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TONGTIEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRANGTHAITHANHTOAN)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PHONG.MAPHONG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.THANG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CHISODIENCU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CHISODIENMOI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DGDIEN.DONGIADIEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TIENDIEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CHISONUOCCU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CHISONUOCMOI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DGNUOC.DONGIANUOC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TIENNUOC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TONGTIEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TRANGTHAITHANHTOAN)
+            </td>
+            <td>
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.MAHOADON }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.MAHOADON })
+            </td>
+        </tr>
+    }
+
+</table>
+<script>
+    $('#btnSearch').on('click', function() {
+        var giatrinhap = $('#txtSearch').val();
+        window.location.href = "/Admin/HDDIENNUOCs/SearchByName?name=" + giatrinhap;
+    });
+</script>

@@ -1,0 +1,36 @@
+﻿@model Models.Framework.DGNUOC
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="text-align: center">SỬA ĐƠN GIÁ NƯỚC</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+        <hr />
+        <div class="form-horizontal" style="margin-left: 450px">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.MADGNUOC)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DONGIANUOC, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DONGIANUOC, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DONGIANUOC, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Lưu" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+}
+
+<div style="text-align: center">
+    @Html.ActionLink("Trở lại trang Danh sách đơn giá nước", "Index")
+</div>

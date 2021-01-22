@@ -1,0 +1,32 @@
+﻿@model Models.Framework.DGNUOC
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="text-align: center">XÓA ĐƠN GIÁ NƯỚC</h4>
+
+<h4 style="text-align: center">Bạn có muốn xóa đơn giá nước?</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 500px">
+        <dt>
+            @Html.DisplayNameFor(model => model.DONGIANUOC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DONGIANUOC)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color" style="text-align: center">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Trở lại trang Danh sách đơn giá nước", "Index")
+        </div>
+    }
+</div>

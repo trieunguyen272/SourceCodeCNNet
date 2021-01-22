@@ -1,0 +1,26 @@
+﻿@model Models.Framework.DGDIEN
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="text-align: center">CHI TIẾT ĐƠN GIÁ ĐIỆN</h4>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 500px">
+        <dt>
+            @Html.DisplayNameFor(model => model.DONGIADIEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DONGIADIEN)
+        </dd>
+
+    </dl>
+</div>
+<p style="text-align: center">
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MADGDIEN }) |
+    @Html.ActionLink("Trở lại trang Danh sách đơn giá điện", "Index")
+</p>

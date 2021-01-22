@@ -1,0 +1,79 @@
+﻿@model List<Models.Framework.SINHVIEN>
+@{
+    ViewBag.Title = "SearchByName";
+    ViewBag.Heading = "DANG SÁCH SINH VIÊN TÌM ĐƯỢC";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<table class="table" style="margin-top: 20px">
+    <tr>
+        <th>
+            Mã sinh viên
+        </th>
+        <th>
+            Họ và tên
+        </th>
+        <th>
+            Ngày sinh
+        </th>
+        <th>
+            Giới tính
+        </th>
+        <th>
+            Địa chỉ
+        </th>
+        <th>
+            Số CMND
+        </th>
+        <th>
+            Số điện thoại
+        </th>
+        <th>
+            Lớp
+        </th>
+
+        <th>
+            Sinh viên nội trú
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MASV)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.HOVATEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAYSINH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GIOITINH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIACHI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CMND)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SDT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LOP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SVNOITRU)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.MASV }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.MASV })
+            </td>
+        </tr>
+    }
+    </table>
+
+

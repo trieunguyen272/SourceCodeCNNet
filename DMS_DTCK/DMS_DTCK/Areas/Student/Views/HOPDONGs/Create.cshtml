@@ -1,0 +1,91 @@
+﻿@model Models.Framework.HOPDONG
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<h5 style="text-align: center">Bằng việc ấn Đăng ký, bạn đã đồng ý với thông tin phòng và thông tin cá nhân và nội quy kí túc xá trường Đại học Quy Nhơn</h5>
+<h5 style="text-align: center">Sau khi ấn Đăng ký, tiền phòng sẽ được chuyển vào tiền nộp phí của bạn kì tiếp theo, bạn có trách 
+    nhiệm thanh toán theo thời gian và hình thức đã được quy định.</h5>
+<h4 style="text-align: center">HỢP ĐỒNG</h4>
+@{
+
+    var usersession = (DMS_DTCK.Common.UserLogin)Session[DMS_DTCK.Common.CommonConstants.USER_SESSION];
+}
+@{
+
+    var idsession = (DMS_DTCK.Common.RegistrationRoom)Session[DMS_DTCK.Common.CommonConstants.ID_SESSION];
+}
+@{ 
+    var now = DateTime.Now;
+}
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+        <hr />
+        <div class="form-horizontal" style="margin-left: 450px">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.MASV, "MASV", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MASV, new { htmlAttributes = new { @class = "form-control", @Value = @usersession.UserName, @readonly = "readonly" } })
+                    @*@Html.DropDownList("MASV", null, htmlAttributes: new { @class = "form-control" })*@
+                    @Html.ValidationMessageFor(model => model.MASV, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MAPHONG, "MAPHONG", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MAPHONG, new { htmlAttributes = new { @class = "form-control", @Value = @idsession.ID, @readonly = "readonly" } })
+                    @*@Html.DropDownList("MAPHONG", null, htmlAttributes: new { @class = "form-control" })*@
+                    @Html.ValidationMessageFor(model => model.MAPHONG, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NGAYLAP, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NGAYLAP, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now, @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.NGAYLAP, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NGAYBATDAU, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NGAYBATDAU, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now, @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.NGAYBATDAU, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NGAYKETTHUC, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NGAYKETTHUC, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Today.AddMonths(10), @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.NGAYKETTHUC, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.HIEULUCHD, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.HIEULUCHD, new { @readonly = "readonly"})
+                            @Html.ValidationMessageFor(model => model.HIEULUCHD, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>*@
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Đăng ký" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+}
+
+<div>
+   
+</div>

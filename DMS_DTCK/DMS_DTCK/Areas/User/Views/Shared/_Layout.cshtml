@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../../Assets/style.css" />
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <header>
+        <div class="row" style="background-color: #63ace5; padding: 20px;">
+            <div class="col-4 logoheader">
+                <img src="../../Assets/QNU_logo.png" class="img-rounded" alt="Cinque Terre" />
+            </div>
+            <div class="col-7">
+                <h1>TRUNG TÂM QUẢN LÝ KÍ TÚC XÁ</h1>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar navbar-default menu">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("HomePage", new { controller ="Home", Area = "User"})">Trang chủ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Giới thiệu
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <a class="dropdown-item" href="#"> @Html.ActionLink("Thông tin chung về KTX", "Information", "Home", new { Area = "User" }, new { })</a>
+                            <a class="dropdown-item" href="#">@Html.ActionLink("Cơ sở vật chất KTX", "Infrastructure", "Home", new { Area = "User" }, new { })</a>
+                            <a class="dropdown-item" href="#">@Html.ActionLink("Công tác quản lý KTX", "Manage", "Home", new { Area = "User" }, new { })</a>
+                            <a class="dropdown-item" href="#">@Html.ActionLink("Các tiện ích đi kèm", "Utilities", "Home", new { Area = "User" }, new { })</a>
+                            <a class="dropdown-item" href="#">@Html.ActionLink("Bảng giá KTX", "Price_list", "Home", new { Area = "User" }, new { })</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Assets/Noiquy.pdf" onclick="window.open(this.href, 'targetWindow', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes'); return false;">Nội quy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Thông báo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Form", new { controller ="Home", Area = "User"})">Biểu mẫu</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Thông tin liên hệ
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                            <a class="dropdown-item" href="#">@Html.ActionLink("Bộ phận văn phòng", "Office", "Home", new { Area = "User" }, new { })</a>
+                            <a class="dropdown-item" href="#">@Html.ActionLink("Bộ phận thường trực KTX", "Custody", "Home", new { Area = "User" }, new { })</a>
+                            <a class="dropdown-item" href="#">@Html.ActionLink("Bộ phận vệ sinh môi trường", "Environment", "Home", new { Area = "User" }, new { })</a>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item item_menu">
+                    <a href="@Url.Action("Login", new { controller ="Login", Area = "User"})">
+                        <span class="glyphicon glyphicon-user"></span>
+                        Đăng nhập
+                    </a>
+                    
+                </li>
+                <li class="nav-item iTtem_menu">
+                    <a href="#">
+                    <span class="glyphicon glyphicon-log-out"></span>
+                    Thoát
+                        </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="row">
+            <div class="col-9">
+                @RenderBody()
+            </div>
+            <div class="col col-3 m-r">
+                <div class="card">
+                    <div class="card-header">
+                        Số chỗ trống hiện tại của KTX
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">- Sinh viên (SV) có nhu cầu ở KTX, đăng ký online bằng tài khoản SV. Trung tâm sắp chỗ và phản hồi kết quả sắp chỗ qua email SV và thứ 3 hàng tuần. SV đóng phí và nhận chỗ ở ngay.</p>
+                        <p class="card-text">- Mọi thắc mắc vui lòng gửi email cho thầy Lê Văn Út (lvut@ctu.edu.vn) để được phản hồi.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Thông báo
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text"></p>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Tin mới nhất
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text"></p>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Số lượt truy cập
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title"></p>
+                        <p class="card-text">Hôm nay</p>
+                        <p class="card-text">Tuần này</p>
+                        <p class="card-text">Tháng này</p>
+                        <p class="card-text">Tất cả</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="row" style="height: 130px">
+            <div class="col col-5 left" style="margin-top: -30px">
+                <ul>
+                    <li>
+                        <p><span class="glyphicon glyphicon-map-marker"></span> 170 An Dương Vương, Tp.Quy Nhơn, Bình Định </p>
+                    </li>
+                    <li>
+                        <p><span class="glyphicon glyphicon-earphone"></span> 0914.175.884 - 0988.194.748 - 0394.809.089</p>
+                    </li>
+                    <li>
+                        <p><span class="glyphicon glyphicon-envelope"></span> dqn@moet.edu.vn - dhqn@qnu.edu.vn</p>
+                    </li>
+                    <li>
+                        <p><span class="glyphicon glyphicon-globe"></span> www.qnu.edu.vn</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col col-7 right" style="margin-top: -30px">
+                <p>Trung tâm quản lý kí túc xá trường Đại học Quy Nhơn</p>
+                <p>® Bản quyền thuộc trường Đại học Quy Nhơn  </p>
+                <p>Copyright © 2020 Ðại học Quy Nhon - Quy Nhon University. All Rights Reserved</p>
+                <p>Designed & Developed by T&T</p>
+            </div>
+        </div>
+    </footer>
+    <div id="contain-home">
+
+
+
+        <div class="container body-content">
+
+        </div>
+    </div>
+
+</body>
+</html>
+<script src="~/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+@*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)*@
+<script>
+    const $dropdown = $(".dropdown");
+    const $dropdownToggle = $(".dropdown-toggle");
+    const $dropdownMenu = $(".dropdown-menu");
+    const showClass = "show";
+
+    $(window).on("load resize", function () {
+        if (this.matchMedia("(min-width: 768px)").matches) {
+            $dropdown.hover(
+              function () {
+                  const $this = $(this);
+                  $this.addClass(showClass);
+                  $this.find($dropdownToggle).attr("aria-expanded", "true");
+                  $this.find($dropdownMenu).addClass(showClass);
+              },
+              function () {
+                  const $this = $(this);
+                  $this.removeClass(showClass);
+                  $this.find($dropdownToggle).attr("aria-expanded", "false");
+                  $this.find($dropdownMenu).removeClass(showClass);
+              }
+            );
+        } else {
+            $dropdown.off("mouseenter mouseleave");
+        }
+    });
+</script>

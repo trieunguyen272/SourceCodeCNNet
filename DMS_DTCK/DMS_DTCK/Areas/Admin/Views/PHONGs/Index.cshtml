@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Models.Framework.PHONG>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="text-align: center">DANH SÁCH PHÒNG</h4>
+
+<p style="text-align: center">
+    @Html.ActionLink("Thêm phòng mới", "Create")
+</p>
+<div>
+    <div class="row">
+        <div class="col-lg-12" style="text-align: right">
+            <input style="border-radius: 7px; width: 270px; height: 40px" type="text" placeholder="Tìm kiếm" id="txtSearch" />
+            <button type="submit" style="border-radius: 7px; width: 50px; height: 40px; margin-left: -50px" id="btnSearch">
+                <i class="glyphicon glyphicon-search"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<table class="table" style="margin-top: 20px">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MAPHONG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KHUNHA.TENKHU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SOPHONG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SOLUONGSV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GIAPHONG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SOCHOTRONG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOTAKHAC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRANGTHAI)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAPHONG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KHUNHA.TENKHU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SOPHONG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SOLUONGSV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GIAPHONG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SOCHOTRONG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOTAKHAC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRANGTHAI)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MAPHONG }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MAPHONG })
+        </td>
+    </tr>
+}
+
+</table>
+<script>
+    $('#btnSearch').on('click', function() {
+        var giatrinhap = $('#txtSearch').val();
+        window.location.href = "/Admin/PHONGs/SearchByName?name=" + giatrinhap;
+        //alert(giatrinhap);
+    });
+</script>

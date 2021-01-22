@@ -1,0 +1,133 @@
+﻿@model Models.Framework.HDDIENNUOC
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="text-align: center">XÓA HÓA ĐƠN ĐIỆN NƯỚC</h4>
+
+<h4 style="text-align: center">Bạn có muốn xóa hóa đơn điện nước?</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 500px">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHONG.MAPHONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHONG.MAPHONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QUANLY.MAQL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QUANLY.MAQL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.THANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.THANG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHISODIENCU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHISODIENCU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHISODIENMOI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHISODIENMOI)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DGDIEN.DONGIADIEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DGDIEN.DONGIADIEN)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TIENDIEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIENDIEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHISONUOCCU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHISONUOCCU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHISONUOCMOI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHISONUOCMOI)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DGNUOC.DONGIANUOC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DGNUOC.DONGIANUOC)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TIENNUOC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIENNUOC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TONGTIEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TONGTIEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRANGTHAITHANHTOAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRANGTHAITHANHTOAN)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color" style="text-align: center">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Trở lại trang Danh sách hóa đơn điện nước", "Index")
+        </div>
+    }
+</div>

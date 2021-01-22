@@ -1,0 +1,34 @@
+﻿@model Models.Framework.KHUNHA
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="text-align: center">CHI TIẾT KHU NHÀ</h4>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 500px">
+        <dt>
+            @Html.DisplayNameFor(model => model.TENKHU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENKHU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOTAKHAC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOTAKHAC)
+        </dd>
+
+    </dl>
+</div>
+<p style="text-align: center">
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MAKHU }) |
+    @Html.ActionLink("Trở lại trang Danh sách khu nhà", "Index")
+</p>

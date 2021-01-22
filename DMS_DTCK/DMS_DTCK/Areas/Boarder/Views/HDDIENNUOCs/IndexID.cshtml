@@ -1,0 +1,108 @@
+﻿@model IEnumerable<Models.Framework.HDDIENNUOC>
+
+@{
+    ViewBag.Title = "IndexID";
+    Layout = "~/Areas/Boarder/Views/Shared/_LayoutID.cshtml";
+}
+
+<h4 style="text-align: center">DANH SÁCH ĐIỆN NƯỚC CỦA PHÒNG</h4>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PHONG.MAPHONG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QUANLY.MAQL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.THANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NAM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHISODIENCU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHISODIENMOI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DGDIEN.DONGIADIEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIENDIEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHISONUOCCU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHISONUOCMOI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DGNUOC.DONGIANUOC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIENNUOC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TONGTIEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRANGTHAITHANHTOAN)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.PHONG.MAPHONG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QUANLY.MAQL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.THANG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CHISODIENCU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CHISODIENMOI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DGDIEN.DONGIADIEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TIENDIEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CHISONUOCCU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CHISONUOCMOI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DGNUOC.DONGIANUOC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TIENNUOC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TONGTIEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TRANGTHAITHANHTOAN)
+            </td>
+
+        </tr>
+    }
+
+</table>

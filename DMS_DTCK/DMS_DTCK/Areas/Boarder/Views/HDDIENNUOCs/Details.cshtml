@@ -1,0 +1,131 @@
+﻿@model Models.Framework.HDDIENNUOC
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Boarder/Views/Shared/_LayoutBoarder.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HDDIENNUOC</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DGDIEN.MADGDIEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DGDIEN.MADGDIEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DGNUOC.MADGNUOC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DGNUOC.MADGNUOC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHONG.MAKHU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHONG.MAKHU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QUANLY.MATKHAU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QUANLY.MATKHAU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.THANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.THANG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHISODIENCU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHISODIENCU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHISODIENMOI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHISODIENMOI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIENDIEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIENDIEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHISONUOCCU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHISONUOCCU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHISONUOCMOI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHISONUOCMOI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIENNUOC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIENNUOC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TONGTIEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TONGTIEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRANGTHAITHANHTOAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRANGTHAITHANHTOAN)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MAHOADON }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

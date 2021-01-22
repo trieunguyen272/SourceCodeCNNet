@@ -1,0 +1,55 @@
+﻿@model List<Models.Framework.PHONG>
+@{
+    ViewBag.Title = "SearchByName";
+    ViewBag.Heading = "DANG SÁCH PHÒNG TÌM ĐƯỢC";
+    Layout = "~/Areas/Student/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<div class="row" style="height: 970px; margin-top: 20px">
+    <div class="col col-12">
+        @foreach (var item in Model)
+        {
+            if (@item.SOCHOTRONG > 0)
+            {
+                <div class="col-lg-2 col-md-12 col-xs-2" style="height: 300px">
+                    <div class="card">
+                        <img src="~/Assets/phongktx.jpg" style="max-width: 310px; max-height: 150px" />
+                        <p>Mã phòng: @item.MAPHONG</p>
+                        <div class="price-number">
+                            <p> <span class="rupees"></span>Giá phòng: @item.GIAPHONG</p>
+                        </div>
+                        <div class="number">
+                            <p> <span class="rupees"></span>Số chỗ trống: @item.SOCHOTRONG</p>
+                        </div>
+                        <div class="add-cart">
+                            <a class="btn" style="color: blue; background-color: papayawhip; margin-left: 60px" href="@Url.Action("Details", new { id = item.MAPHONG})">
+                                Đăng ký
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="col-lg-2 col-md-12 col-xs-2" style="height: 300px">
+                    <div class="card">
+                        <img src="~/Assets/phongktx.jpg" style="max-width: 310px; max-height: 150px" />
+                        <p>Mã phòng: @item.MAPHONG</p>
+                        <div class="price-number">
+                            <p> <span class="rupees"></span>Giá phòng: @item.GIAPHONG</p>
+                        </div>
+                        <div class="number">
+                            <p> <span class="rupees"></span>Số chỗ trống: @item.SOCHOTRONG</p>
+                        </div>
+                        <div class="add-cart">
+                            <a class="btn" style="pointer-events: none; cursor: default; color: darkgray; background-color: white; margin-left: 60px" href="@Url.Action("Details", new { id = item.MAPHONG})">
+                                Đăng ký
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+</div>
+    </div>

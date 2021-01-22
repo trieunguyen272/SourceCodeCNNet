@@ -1,0 +1,71 @@
+﻿@model Models.Framework.DIENNUOC
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="text-align: center">XÓA ĐIỆN NƯỚC</h4>
+
+<h4 style="text-align: center">Bạn có muốn xóa điện nước?</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 500px">
+        <dt>
+            @Html.DisplayNameFor(model => model.PHONG.MAPHONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHONG.MAPHONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QUANLY.MAQL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QUANLY.MAQL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.THANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.THANG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHISODIEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHISODIEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHISONUOC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHISONUOC)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color" style="text-align: center">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Trở lại trang Danh sách điện nước", "Index")
+        </div>
+    }
+</div>
